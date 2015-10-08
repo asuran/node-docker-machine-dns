@@ -1,0 +1,27 @@
+{
+  "name": "docker-machine-dns",
+  "version": "1.0.0",
+  "description": "Runs a tiny DNS server that resolves *.docker hostnames using docker-machine ip",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "docker-machine-dns": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/relateiq/node-docker-machine-dns.git"
+  },
+  "keywords": [
+    "docker",
+    "docker-machine",
+    "dns"
+  ],
+  "author": "SalesforceIQ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/relateiq/node-docker-machine-dns/issues"
+  },
+  "homepage": "https://github.com/relateiq/node-docker-machine-dns#readme"
+}
