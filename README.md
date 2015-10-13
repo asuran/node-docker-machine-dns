@@ -12,7 +12,13 @@ is to listen for *.docker DNS lookups and resolve the hostname using
 
 ## Setup:
 
-### The easy way
+Install in the usual way:
+
+```
+npm install -g docker-machine-dns
+```
+
+### Setup: The easy way
 
 Run this: 
 
@@ -26,7 +32,7 @@ and grants ownership to your current user account.  The service will
 automatically configure the resolver/docker file on each run, making it
 "just work".
 
-### The way that doesn't require changing ownership of /etc/resolver
+### Setup: The way that doesn't require changing ownership of /etc/resolver
 
 Write this to `/etc/resolver/docker` and always run with the same specified port
 
