@@ -45,8 +45,13 @@ function updateConfiguration(port) {
                      'search_order\t300000\n' +
                      'timeout\t1\n';
 
-    fs.unlink('/etc/resolver/docker');
-    fs.writeFileSync('/etc/resolver/docker', fileConfig);
+    try {
+        fs.unlinkSync('/etc/resolver/docker');
+        fs.writeFileSync('/etc/resolver/docker', fileConfig);
+    }
+    catch (e) {
+        console.warn('Could not automatically configure resolver; make sure /etc/resolver/docker is properly set up');
+    }
 }
 
 function getMachineIp(machineName) {
