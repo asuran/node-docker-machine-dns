@@ -23,7 +23,8 @@ npm install -g docker-machine-dns
 Run this: 
 
 ```bash
-sudo mkdir -p /etc/resolver		
+sudo mkdir -p /etc/resolver
+sudo touch /etc/resolver/docker
 sudo chown -R $USER /etc/resolver		
 ```
 
