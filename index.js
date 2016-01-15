@@ -47,6 +47,9 @@ function updateConfiguration(port) {
 
     try {
         fs.unlinkSync('/etc/resolver/docker');
+    } catch (e) { }
+
+    try {
         fs.writeFileSync('/etc/resolver/docker', fileConfig);
     }
     catch (e) {
