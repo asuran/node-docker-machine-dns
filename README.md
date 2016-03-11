@@ -1,6 +1,6 @@
 # docker-machine DNS server
 
-This package fires up a tiny (< 100 lines) DNS server whose sole purpose
+This package fires up a tiny (~100 lines) DNS server whose sole purpose
 is to listen for *.docker DNS lookups and resolve the hostname using 
 `docker-machine ip`.
 
@@ -9,6 +9,8 @@ is to listen for *.docker DNS lookups and resolve the hostname using
   * DNS query for dev.docker comes in
   * Server parses out "dev.docker"
   * Server responds with the result of `$(docker-machine ip dev)`
+
+**Note:** you can change the default IP resolver from `docker-machine ip` to your own custom command by setting the `DOCKER_MACHINE_DNS_RESOLVER` environment variable.
 
 ## Setup:
 
