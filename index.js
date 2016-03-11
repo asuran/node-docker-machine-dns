@@ -66,6 +66,7 @@ function getMachineIp(machineName) {
 
         exec(cmd + ' ' + machineName, function(err, stdout) {
             if (err) {
+                console.error(err.message);
                 reject(err);
                 return;
             }
