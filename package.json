@@ -1,6 +1,6 @@
 {
   "name": "docker-machine-dns",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Runs a tiny DNS server that resolves *.docker hostnames using docker-machine ip",
   "main": "index.js",
   "publishConfig": {
