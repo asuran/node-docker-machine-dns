@@ -59,7 +59,12 @@ function updateConfiguration(port) {
 
 function getMachineIp(machineName) {
     return new Promise(function(resolve, reject) {
-        exec('docker-machine ip ' + machineName, function(err, stdout) {
+        var cmd = 'docker-machine ip';
+        if (process.env.DOCKER_MACHINE_DNS_RESOLVER) {
+            cmd = process.env.DOCKER_MACHINE_DNS_RESOLVER;
+        }
+
+        exec(cmd + ' ' + machineName, function(err, stdout) {
             if (err) {
                 reject(err);
                 return;
