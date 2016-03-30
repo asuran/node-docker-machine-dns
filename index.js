@@ -5,6 +5,7 @@
 var exec = require('child_process').exec;
 var fs = require('fs');
 var udp = require('dgram');
+var cache = {};
 
 var s = udp.createSocket('udp4');
 s.bind(process.argv[2] || 0, function() {
@@ -65,13 +66,16 @@ function getMachineIp(machineName) {
         }
 
         exec(cmd + ' ' + machineName, function(err, stdout) {
-            if (err) {
+            if (err && cache[machineName]) {
+                resolve(cache[machineName]);
+            } else if (err) {
                 console.error(err.message);
                 reject(err);
                 return;
             }
 
-            resolve(stdout.trim());
+            cache[machineName] = stdout.trim();
+            resolve(cache[machineName]);
         });
     });
 }
