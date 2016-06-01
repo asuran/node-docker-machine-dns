@@ -37,7 +37,6 @@ function handleDgram(chunk, rinfo) {
     hostname.machineName = hostname.fqdn[hostname.fqdn.length - 2];
     hostname.fqdn = hostname.fqdn.join('.');
     hostname.octets = chunk.slice(12, offset);
-    console.log('hostname: %j', hostname);
 
     return lookupDomain(txnid, hostname).then(function(dgramData) {
         s.send(new Buffer(dgramData), 0, dgramData.length, rinfo.port, rinfo.address);
